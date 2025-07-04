@@ -1,5 +1,33 @@
+let humanScore=0
+let computerScore=0
 function getComputerChoice(){
     choice=Math.floor(Math.random()*100)
-    console.log(choice)
+    choice <= 33
+    ? choice="Rock"
+    : choice <=66
+    ? choice = "Paper"
+    : choice = "Scissors"
+    return choice
 }
-getComputerChoice()
+function getPlayerChoice(){
+    choice=prompt("Choose rock, paper, or scissors")
+    while (true){
+    if (choice.toLowerCase()==="rock"){
+        choice="Rock"
+        break
+    }
+    else if (choice.toLowerCase()==="paper"){
+        choice = "Paper"
+        break
+    }
+    else if (choice.toLowerCase()==="scissors") {
+        choice = "Scissors"
+        break
+    }
+    else {
+        choice=prompt("Invalid, try again")
+    }
+     choice=prompt("Invalid, try again")
+    }
+    return choice
+}
