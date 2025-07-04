@@ -31,3 +31,33 @@ function getPlayerChoice(){
     }
     return choice
 }
+function playRound(getComputerChoice,getPlayerChoice){
+    if (getComputerChoice===getPlayerChoice){
+        console.log("It's a tie!!!")
+    }
+    else if (getComputerChoice === "Paper" && getPlayerChoice==="Rock" || getComputerChoice === "Rock" && getPlayerChoice==="Scissors" || getComputerChoice === "Scissors" && getPlayerChoice==="Paper") {
+        console.log("Computer wins!!!!!")
+        ++computerScore
+    }
+    else{
+        console.log("You win!!!!!")
+        ++humanScore
+    }
+}
+function playGame(){
+for (let i =1; i<=5; i++){
+console.log(playRound(getComputerChoice(),getPlayerChoice()))
+console.log(humanScore)
+console.log(computerScore)
+if (humanScore===computerScore){
+    console.log("No one wins, but no one loses either, ggs")
+}
+else if (humanScore>computerScore){
+    console.log("Nice job! You won the whole tournament!")
+}
+else{
+    console.log("The computer won, oh well, better luck next time!")
+}
+}
+}
+console.log(playGame())
